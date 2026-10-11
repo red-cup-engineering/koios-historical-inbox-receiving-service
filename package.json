@@ -1,0 +1,19 @@
+{
+  "name": "@causeway-services/koios-historical-inbox-receiving-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Explicit offline legacy inbox cursor receiving; never loaded by the live native monitor.",
+  "exports": {
+    ".": "./receive.mjs"
+  },
+  "files": [
+    "receive.mjs",
+    "read-sql.mjs"
+  ],
+  "dependencies": {
+    "@red-cup-engineering/activitypub-services-section": "workspace:*",
+    "@red-cup-engineering/semiotic-eavt-services-section": "workspace:*",
+    "@causeway-services/activitypub-retained-inbox-provider": "workspace:*"
+  }
+}
