@@ -14,6 +14,7 @@
   "dependencies": {
     "@red-cup-engineering/activitypub-services-section": "workspace:*",
     "@red-cup-engineering/semiotic-eavt-services-section": "workspace:*",
-    "@causeway-services/activitypub-retained-inbox-provider": "workspace:*"
+    "@causeway-services/activitypub-retained-inbox-provider": "workspace:*",
+    "@red-cup-engineering/computer-system-engine": "workspace:*"
   }
 }

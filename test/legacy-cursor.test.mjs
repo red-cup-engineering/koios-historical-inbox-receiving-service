@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { DatabaseSync } from "node:sqlite";
+import { writeLegacySqlite } from "../../../test/fixtures/write-legacy-sqlite.mjs";
 import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
@@ -19,8 +19,7 @@ const FIXTURE_DB_PATH = join(TEST_DIR, "../../../test/fixtures", "inbox-fixture.
 function createScratchDatabase() {
   const workDir = mkdtempSync(join(tmpdir(), "inbox-arrivals-"));
   const dbPath = join(workDir, "activitypub.sqlite");
-  const database = new DatabaseSync(dbPath);
-  database.exec(`
+  writeLegacySqlite(dbPath, [`
     CREATE TABLE activitypub_verified_arrivals (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       content_sha256 TEXT NOT NULL UNIQUE,
@@ -29,15 +28,14 @@ function createScratchDatabase() {
       recipient TEXT,
       observed_at INTEGER NOT NULL
     )
-  `);
-  const insert = database.prepare("INSERT INTO activitypub_verified_arrivals (content_sha256, activity_json, receipt_json, recipient, observed_at) VALUES (?, ?, ?, ?, ?)");
+  `]);
   return {
     workDir,
     dbPath,
     insertActivity(hash, activity, observedAt) {
-      insert.run(hash, JSON.stringify(activity), "{}", null, observedAt);
+      writeLegacySqlite(dbPath, [["INSERT INTO activitypub_verified_arrivals (content_sha256, activity_json, receipt_json, recipient, observed_at) VALUES (?, ?, ?, ?, ?)", hash, JSON.stringify(activity), "{}", null, observedAt]]);
     },
-    close: () => database.close(),
+    close: () => {},
   };
 }
 
