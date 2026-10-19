@@ -16,5 +16,9 @@
     "@red-cup-engineering/semiotic-eavt-services-section": "workspace:*",
     "@causeway-services/activitypub-retained-inbox-provider": "workspace:*",
     "@red-cup-engineering/computer-system-engine": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/causeway-services/koios-historical-inbox-receiving-service.git"
   }
 }
