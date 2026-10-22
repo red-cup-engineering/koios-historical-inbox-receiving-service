@@ -20,5 +20,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/causeway-services/koios-historical-inbox-receiving-service.git"
+  },
+  "license": "Apache-2.0",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
   }
 }
