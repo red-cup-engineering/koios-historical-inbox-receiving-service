@@ -12,8 +12,8 @@
     "read-sql.mjs"
   ],
   "dependencies": {
-    "@red-cup-engineering/activitypub-services-section": "workspace:*",
-    "@red-cup-engineering/semiotic-eavt-services-section": "workspace:*",
+    "@red-cup-engineering/activitypub-engineering-services-section": "workspace:*",
+    "@red-cup-engineering/semiotic-eavt-engineering-services-section": "workspace:*",
     "@causeway-services/activitypub-retained-inbox-provider": "workspace:*",
     "@red-cup-engineering/computer-system-engine": "workspace:*"
   },
