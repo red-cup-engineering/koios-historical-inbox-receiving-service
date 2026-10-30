@@ -1,4 +1,6 @@
-# koios-historical-inbox-receiving-service
+# koios-news-historical-inbox-receiving-engine
+
+The koios-news-historical-inbox-receiving-engine app is an application of the computer-koios-news-media-systems-engineering-services-section: explicit offline legacy inbox cursor receiving; never loaded by the live native monitor.
 
 <!-- 561-group-standards:badges:start -->
 [![Causeway Services](https://img.shields.io/badge/561%20Group-Causeway%20Services-115e69)](https://github.com/causeway-services)
